@@ -298,6 +298,7 @@ export interface Encounter {
   diagnoses: Array<Diagnosis>;
   patient: OpenmrsResource;
   location: OpenmrsResource;
+  auditInfo: { dateCreated: string };
 }
 
 /** https://rest.openmrs.org/?shell#create-an-encounter */
