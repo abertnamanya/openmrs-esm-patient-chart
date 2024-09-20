@@ -1,5 +1,3 @@
-import { Form } from '@openmrs/ngx-formentry';
-
 interface OpenmrsResource {
   display: string;
   uuid: string;
@@ -475,4 +473,33 @@ export type ErrorObject = {
     fieldErrors?: FieldError;
     globalErrors?: FieldError;
   };
+};
+
+/**
+ * Represents the data structure of an appointment service.
+ */
+export type AppointmentServiceData = {
+  appointmentServiceId: number;
+  name: string;
+  description?: string;
+  speciality: OpenmrsResource;
+  startTime: string;
+  endTime: string;
+  maxAppointmentsLimit?: number;
+  durationMins?: number;
+  location: OpenmrsResource;
+  uuid: string;
+  color: string;
+  initialAppointmentStatus?: string;
+  creatorName?: string;
+  weeklyAvailability: any[];
+  serviceTypes: any[];
+};
+
+/**
+ * Represents an appointment service option for selection.
+ */
+export type AppointmentServiceOption = {
+  label: string;
+  value: string;
 };
