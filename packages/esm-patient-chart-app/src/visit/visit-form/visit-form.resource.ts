@@ -19,6 +19,10 @@ export type VisitFormData = {
   visitAttributes: {
     [x: string]: string;
   };
+  visitMedicalAid: {
+    display?: string;
+    uuid?: string;
+  };
 };
 
 export function useConditionalVisitTypes() {

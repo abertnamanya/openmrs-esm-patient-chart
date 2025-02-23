@@ -68,6 +68,7 @@ import LocationSelector from './location-selector.component';
 import VisitAttributeTypeFields from './visit-attribute-type.component';
 import VisitDateTimeField from './visit-date-time.component';
 import styles from './visit-form.scss';
+import OrganizationSelector from './organization-selector.component';
 
 interface StartVisitFormProps extends DefaultPatientWorkspaceProps {
   /**
@@ -768,6 +769,9 @@ const StartVisitForm: React.FC<StartVisitFormProps> = ({
                 <VisitAttributeTypeFields setErrorFetchingResources={setErrorFetchingResources} />
               </div>
             </section>
+
+            {/* This field lets the user select a location for the visit. The location is required for the visit to be saved. Defaults to the active session location */}
+            <OrganizationSelector control={control} />
 
             {/* Queue location and queue fields. These get shown when config.showServiceQueueFields is true,
                 or when the form is opened from the queues app */}
